@@ -1,0 +1,27 @@
+
+
+spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/testdb?useUnicode=true&serverTimezone=Asia/Seoul
+    username: testsql
+    password: a1234
+#  live reloading ? ?? ?? ??
+  devtools:
+    livereload:
+      enabled: true
+    restart:
+      enabled: true
+  thymeleaf:
+    cache: false
+
+
+
+#spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+#spring.datasource.url=jdbc:mysql://127.0.0.1:3306/itemservice?useSSL=false&useUnicode=true&serverTimezone=Asia/Seoul
+#
+#spring.datasource.username=root
+#spring.datasource.password=12345678
+#
+#spring.jpa.show-sql=true
+#spring.jpa.hibernate.ddl-auto=update
+#spring.jpa.properties.hibernate.format_sql=true
