@@ -46,6 +46,15 @@ jobs:
       - name: Run chmod to make gradlew executable
         run: chmod +x ./gradlew
 
+      # 2-2 mysql 추가 (market place 이용)
+      - name: Setup MySQL
+        uses: samin/mysql-action@v1
+        with:
+          character set server: 'utf8'
+          mysql database: 'practice'
+          mysql user: 'admin'
+          mysql password: ${{ secrets.MYSQL_PASSWORD }}
+
       # (3) Gradle build (Test 제외)
       - name: Build with Gradle
         uses: gradle/gradle-build-action@0d13054264b0bb894ded474f08ebb30921341cee
