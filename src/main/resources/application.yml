@@ -3,6 +3,17 @@ spring:
   profiles:
     include: real
 
-
+  datasource:
+    url: jdbc:mysql://umc-rds.cnvgwr3tpow8.ap-northeast-2.rds.amazonaws.com/practice?useUnicode=true&serverTimezone=Asia/Seoul&useSSL=false
+    username: admin
+    password: ${db.password} # 아무거나 설정 가능.
+  #  live reloading ? ?? ?? ??
+  devtools:
+    livereload:
+      enabled: true
+    restart:
+      enabled: true
+  thymeleaf:
+    cache: false
 
 

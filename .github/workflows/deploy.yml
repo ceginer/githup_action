@@ -20,6 +20,8 @@ env:
   S3_BUCKET_NAME: woony.shop
   CODE_DEPLOY_APPLICATION_NAME: my-test-codedeploy-app
   CODE_DEPLOY_DEPLOYMENT_GROUP_NAME: my-test-codedeploy-development-group
+  # applicaion.yml 파일 위치 설정
+  RESOURCE_PATH: ./src/main/resources/application.yml
 
 permissions:
   contents: read
@@ -45,6 +47,18 @@ jobs:
       # (2-1) 권한 추가
       - name: Run chmod to make gradlew executable
         run: chmod +x ./gradlew
+
+      # (2-2) yml 파일 세팅
+      - name: Set yaml file
+        uses: microsoft/variable-substitution@v1
+        with:
+          files: ${{ env.RESOURCE_PATH }}
+        env:
+#          spring.datasource.url: ${{secrets.DB_URL}}
+#          spring.datasource.username: ${{secrets.DB_USERNAME}}
+          spring.datasource.password: ${{secrets.DB_PASSWORD}}
+#          jwt.secret: ${{secrets.JWT_SECRET_KEY}}
+#          jwt.token-validity-in-seconds: ${{secrets.JWT_TOKEN_VALIDITY}}
 
       # 2-2 mysql 추가 (market place 이용)
       - name: Setup MySQL
