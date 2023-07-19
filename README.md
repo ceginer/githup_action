@@ -4,3 +4,5 @@
 만들었던 Simple_CRUD 사이트를 인스턴스에 연결해 CI/CD 를 연습해보았다.
 
 자세한 설명은 [Notion](https://www.notion.so/CI-CD-Github-Actions-c1bb2585f2144e1f8284a1472d19e750?pvs=4) 참고
+
+사이트 주소 : http://woony.shop
